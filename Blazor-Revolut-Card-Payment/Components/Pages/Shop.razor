@@ -1,0 +1,18 @@
+﻿@page "/shop"
+
+@attribute [RenderModeInteractiveServer]
+
+<PageTitle>Shop</PageTitle>
+
+<h1>Shop</h1>
+
+<p>https://sandbox-merchant.revolut.com/api/orders</p>
+
+<input type="text" @bind-value="SecretAPIKey" placeholder="Secret API Key" />
+
+<br />
+
+<button class="btn btn-primary" @onclick="CreateOrderClick">Create Order</button>
+
+<p>@responseRev</p>
+

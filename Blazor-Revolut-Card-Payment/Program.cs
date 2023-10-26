@@ -1,4 +1,6 @@
 using Blazor_Revolut_Card_Payment.Components;
+using Revolut_Merchant.Interfaces;
+using Revolut_Merchant.Services;
 
 namespace Blazor_Revolut_Card_Payment
 {
@@ -11,6 +13,10 @@ namespace Blazor_Revolut_Card_Payment
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+
+			builder.Services.AddHttpClient();
+
+            builder.Services.AddScoped<IOrderService, OrderService>();
 
             var app = builder.Build();
 
